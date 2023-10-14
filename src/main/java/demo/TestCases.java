@@ -5,11 +5,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 //Selenium Imports
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.remote.BrowserType;
+//import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 ///
+import org.openqa.selenium.By;
 
 
 public class TestCases {
@@ -33,11 +34,39 @@ public class TestCases {
     }
 
     
+    //public  void testCase01(){
+      //  System.out.println("Start Test case: testCase01");
+       // driver.get("https://www.google.com");
+       // System.out.println("end Test case: testCase02");
+   // }
+
     public  void testCase01(){
         System.out.println("Start Test case: testCase01");
-        driver.get("https://www.google.com");
+       // driver.get("https://www.google.com");
         System.out.println("end Test case: testCase02");
-    }
+    
+    
+    //get URL www.google.com
+    driver.get("https://www.google.co.in");
+     
+
+    //Locate search bar using locater "ID" APjFqb |sendkeys("amazon")
+    driver.findElement(By.id("APjFqb")).sendKeys("amazon");
+
+    //click on google search button using locater "Name" btnk
+    driver.findElement(By.name("btnk")).click();
+
+    //find the link amazon.in or amazon.com using locater "Xpath" herf="http://www.amazon.in/"
+   boolean status = driver.findElement(By.xpath("//a[contains(@herf,'amazon.in') or contains(@herf,'amazon.com')]")).isDisplayed();
+
+   //Return true if the link element is found
+   if (status)
+   {
+    System.out.println(status);
+   }
+   
+}
+
 
 
 }
