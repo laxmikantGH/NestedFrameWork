@@ -4,25 +4,40 @@
 package demo;
 import java.net.MalformedURLException;
 
-
 public class App {
     public void getGreeting() throws InterruptedException, MalformedURLException {
         TestCases tests = new TestCases(); // Initialize your test class
 
-        //TODO: call your test case functions one after other here
-
-        tests.testCase01();
-
-        //END Tests
-
-
-        tests.endTest(); // End your test by clearning connections and closing browser
+        try {
+            // TODO: call your test case functions one after the other here
+            tests.testCase01();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle any exceptions specific to your test cases
+        } finally {
+            tests.endTest(); // End your test by clearing connections and closing the browser
+        }
     }
 
-    public static void main(String[] args) throws InterruptedException, MalformedURLException {
-        new App().getGreeting();
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        try {
+            new App().getGreeting();
+        } catch (InterruptedException | MalformedURLException e) {
+            e.printStackTrace(); // Handle exceptions for getGreeting
+        }
 
-        AutomateCountHyperLinks automatecounthyperlinks = new AutomateCountHyperLinks();
-        
+        try {
+            AutomateCountHyperLinks.CountHyperLinks();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions specific to AutomateCountHyperLinks
+        }
+
+        try {
+            AutomatePostLinkedIn.automatePost();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
+        }
     }
 }
