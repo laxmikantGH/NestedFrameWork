@@ -50,5 +50,10 @@ public class App {
         } catch (Exception e) {
             e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
         }
+        try {
+            WindowHandlingExample.whandle();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
+        }
     }
 }
