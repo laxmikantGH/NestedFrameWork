@@ -38,12 +38,15 @@ public class App {
             AutomatePostLinkedIn.automatePost();
         } catch (Exception e) {
             e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
-        }
-
-        
+        } 
         
         try {
             BookMyShowAutomation.selectImageURL();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
+        }
+        try {
+            IMDbAutomation.imdb();
         } catch (Exception e) {
             e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
         }
