@@ -39,5 +39,13 @@ public class App {
         } catch (Exception e) {
             e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
         }
+
+        
+        
+        try {
+            BookMyShowAutomation.selectImageURL();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions specific to LinkedInAutomation
+        }
     }
 }
